@@ -19,6 +19,10 @@ public class SchoolOfFish : MonoBehaviour
 
     public float schoolSpeed;
 
+    public Transform arrow;
+
+    public Transform player;
+
     [System.Serializable]public class FishData
     {
         public Vector3 originalPosition;
@@ -73,5 +77,11 @@ public class SchoolOfFish : MonoBehaviour
             turnTimer_Max = Random.Range(20, 100);
             clockwise = !clockwise;
         }
+        
+        Vector3 vectorToTarget = transform.position - arrow.position;
+        Quaternion q = Quaternion.AngleAxis(Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - 90, Vector3.forward);
+        arrow.rotation = Quaternion.RotateTowards(arrow.rotation,q ,360);
+        vectorToTarget.Normalize();
+        arrow.position = vectorToTarget * 2 + player.position;
     }
 }
