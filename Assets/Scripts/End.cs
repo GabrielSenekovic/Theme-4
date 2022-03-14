@@ -9,6 +9,10 @@ public class End : MonoBehaviour
     {
         if(!GetComponent<AudioSource>().isPlaying && !quit)
         {
+            /*if(GetComponent<SchoolOfFish>().playerIsInSchool)
+            {
+
+            }*/
             Application.Quit();
             quit = true;
             Debug.Log("Game over");

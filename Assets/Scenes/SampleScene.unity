@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 164009258}
   - component: {fileID: 164009260}
   - component: {fileID: 164009261}
+  - component: {fileID: 164009262}
   m_Layer: 0
   m_Name: School of creepy fish
   m_TagString: Untagged
@@ -165,6 +166,7 @@ MonoBehaviour:
   schoolSpeed: 0.05
   arrow: {fileID: 1769285917}
   player: {fileID: 583359764}
+  playerIsInSchool: 0
   fish: []
 --- !u!4 &164009259
 Transform:
@@ -288,6 +290,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 037f109cfe681aa4f8d0ac8dd2850846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &164009262
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164009257}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 3.2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,9 +401,10 @@ GameObject:
   - component: {fileID: 583359766}
   - component: {fileID: 583359765}
   - component: {fileID: 583359767}
+  - component: {fileID: 583359768}
   m_Layer: 0
   m_Name: Pufferfish
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -498,6 +517,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &583359768
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583359763}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 5
 --- !u!1 &1769285915
 GameObject:
   m_ObjectHideFlags: 0

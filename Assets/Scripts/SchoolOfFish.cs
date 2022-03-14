@@ -23,6 +23,8 @@ public class SchoolOfFish : MonoBehaviour
 
     public Transform player;
 
+    public bool playerIsInSchool;
+
     [System.Serializable]public class FishData
     {
         public Vector3 originalPosition;
@@ -83,5 +85,21 @@ public class SchoolOfFish : MonoBehaviour
         arrow.rotation = Quaternion.RotateTowards(arrow.rotation,q ,360);
         vectorToTarget.Normalize();
         arrow.position = vectorToTarget * 2 + player.position;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) 
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            playerIsInSchool = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other) 
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            playerIsInSchool = false;
+        }
     }
 }
