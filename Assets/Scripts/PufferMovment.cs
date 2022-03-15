@@ -46,7 +46,7 @@ public class PufferMovment : MonoBehaviour
         
         Vector3 camPos = Camera.main.transform.position;
         float dist = (transform.position - camPos).magnitude;
-        Vector2 tempPos = Vector2.Lerp(camPos, transform.position, 0.001f + dist * 0.001f);
+        Vector2 tempPos = Vector2.Lerp(camPos, transform.position, 0.001f + dist * 0.0015f);
         Camera.main.transform.position = new Vector3(tempPos.x, tempPos.y, camPos.z);
     }
 
